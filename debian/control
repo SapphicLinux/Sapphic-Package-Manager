@@ -5,7 +5,7 @@ Priority: standard
 Standards-Version: 4.6.2
 Build-Depends: debhelper-compat (= 13)
 
-Package: pogupdate
+Package: sapphic-package-manager
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: update apt, flatpak, and pipx packages quickly
