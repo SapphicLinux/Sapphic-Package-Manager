@@ -1,0 +1,48 @@
+#!/bin/bash
+
+isroot=false
+issudo=false
+if [ "$EUID" -eq 0 ];then isroot=true;fi
+if [ -n "$SUDO_USER" ]; then issudo=true;suggestsudo="sudo ";fi
+
+usage(){
+  echo -n "spm "
+  cat ./usr/share/doc/spm/spm_search
+}
+
+yn=""
+while getopts 'hafp' flag; do
+  case "${flag}" in
+    [afp] ) yn="${yn}${flag}" ;;
+    h|* ) usage
+       exit 1 ;;
+  esac
+done
+shift $((OPTIND - 1))
+if [ -z "$yn" ];then
+  yn="Y"
+fi
+
+if [ -z "${1}" ];then
+  echo -e "\033[1mYou must specific a package name!\033[0m"
+  usage
+  exit 1
+fi
+
+case $yn in
+  *[Nn]* ) exit;;
+  *[Yya]* ) if $isroot; then
+              echo -e "\033[1mUpdating apt sources...\033[0m"
+              apt -qqq update
+              echo -e "\033[1mSearching for apt packages...\033[0m"
+              dpkg-query --show --showformat='${Package;-35}\t${Version;-15}\t${binary:Synopsis}\n' *"${1}"*
+              echo -e "\033[1mApt packages can be installed with \`\033[0m${suggestsudo}apt install [Package Name]\033[1m\`. A package's name can be found in the left column\033[0m"
+            fi;;&
+  *[Yyf]* ) echo -e "\033[1mSearching for flatpak packages...\033[0m"
+            flatpak search --columns=application,version,description ${1}
+            echo -e "\033[1mFlatpak packages can be installed with \`\033[0m${suggestsudo}flatpak install [Application ID]\033[1m\'. A package's Application ID can be found in the left column.\033[0m";;&
+  *[p]* ) echo -e "\033[1mUnable to search for pipx packages\033[0m";;&
+  *[Yyafp]* ) exit 0;;
+  * ) echo "bad search options";exit 1;;
+esac
+
