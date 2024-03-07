@@ -9,7 +9,7 @@ Standards-Version: 4.6.2
 Homepage: https://github.com/SapphicLinux/Sapphic-Package-Manager
 
 Package: sapphic-package-manager
-Architecture: any
+Architecture: all
 Multi-Arch: foreign
 Depends:
  ${shlibs:Depends},
