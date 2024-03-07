@@ -8,7 +8,7 @@ _completions()
 }
 
 COMMAND="${1}"
-#VERSION=$(cat /lib/spm/version)
+VERSION=$(cat /lib/spm/version)
 
 
 upgrade() {

@@ -1,0 +1,4 @@
+etc/bash_completion.d/spm etc/bash_completion.d/
+usr/bin/* usr/bin/
+usr/share/doc/spm/* usr/share/doc/spm/
+lib/spm/* lib/spm/

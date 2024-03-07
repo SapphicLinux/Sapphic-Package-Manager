@@ -1,0 +1,45 @@
+#!/bin/bash
+
+_completions()
+{
+  COMPREPLY+=("now")
+  COMPREPLY+=("tomorrow")
+  COMPREPLY+=("never")
+}
+
+COMMAND="${1}"
+VERSION=$(cat /lib/spm/version)
+
+
+upgrade() {
+  spm_upgrade $@
+}
+
+clean() {
+  spm_clean $@
+}
+
+search() {
+  spm_search $@
+}
+
+usage() {
+  echo "Sapphic Package Manager v${VERSION}"
+  cat ./usr/share/doc/spm/spm
+  sed -e 's/^/  /' ./usr/share/doc/spm/spm_upgrade
+  sed -e 's/^/  /' ./usr/share/doc/spm/spm_search
+  sed -e 's/^/  /' ./usr/share/doc/spm/spm_clean
+}
+
+case $COMMAND in
+  upgrade|search|clean )
+    shift 1;;&
+  upgrade )
+    upgrade $@;;
+  clean )
+    clean $@;;
+  search )
+    search $@;;
+  *|usage )
+    usage;;
+esac

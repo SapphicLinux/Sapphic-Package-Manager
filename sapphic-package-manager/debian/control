@@ -1,0 +1,20 @@
+Source: sapphic-package-manager
+Section: utils
+Priority: optional
+Maintainer: Penelope Gwen <support@pogmom.me>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.6.2
+Homepage: https://github.com/SapphicLinux/Sapphic-Package-Manager
+
+Package: sapphic-package-manager
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ apt,
+ pipx,
+ flatpak
+Description: frontend for managing apt, flatpak, and pipx packages

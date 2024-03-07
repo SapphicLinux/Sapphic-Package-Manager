@@ -1,0 +1,7 @@
+search: Search for packages available via apt or flatpak
+  usage:
+    spm search -[h|af] query
+  options:
+    -a: Disable default search-all behavior and whitelist apt for search
+    -f: Disable default search-all behavior and whitelist flatpak for search
+    -h: Print usage dialogue

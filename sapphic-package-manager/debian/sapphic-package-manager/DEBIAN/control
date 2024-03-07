@@ -1,0 +1,11 @@
+Package: sapphic-package-manager
+Version: 1.0
+Architecture: arm64
+Maintainer: Penelope Gwen <support@pogmom.me>
+Installed-Size: 32
+Depends: apt, pipx, flatpak
+Section: utils
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://github.com/SapphicLinux/Sapphic-Package-Manager
+Description: frontend for managing apt, flatpak, and pipx packages
