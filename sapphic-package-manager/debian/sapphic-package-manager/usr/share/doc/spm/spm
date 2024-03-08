@@ -1,6 +1,0 @@
-Usage: spm command [options]
-
-Sapphic Package Manager is not a package manager- it is a congregate frontend for apt, flatpak, and pipx intended for use on Sapphian Linux
-
-Commands:
-  usage: Print this dialogue

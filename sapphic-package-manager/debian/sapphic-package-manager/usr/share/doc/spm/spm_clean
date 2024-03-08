@@ -1,9 +1,0 @@
-clean: Remove unused packages that were previously installed via apt and flatpak
-  usage:
-    spm clean -[h|Nn|Yyaf]
-  options:
-    -Yy: Skip confirmation and approve all cleanup
-    -Nn: Skip confirmation and approve no cleanup
-    -a: Requires root, skip confirmation and approve apt cleanup. Redundant when used with -Yy
-    -f: Skip confirmation and approve flatpak cleanup. Redundant when used with -Yy
-    -h: Print usage dialogue

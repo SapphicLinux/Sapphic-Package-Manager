@@ -26,9 +26,9 @@ search() {
 usage() {
   echo "Sapphic Package Manager v${VERSION}"
   cat ./usr/share/doc/spm/spm
-  sed -e 's/^/  /' ./usr/share/doc/spm/spm_upgrade
-  sed -e 's/^/  /' ./usr/share/doc/spm/spm_search
-  sed -e 's/^/  /' ./usr/share/doc/spm/spm_clean
+  sed -e 's/^/  /' /usr/share/doc/spm/spm_upgrade
+  sed -e 's/^/  /' /usr/share/doc/spm/spm_search
+  sed -e 's/^/  /' /usr/share/doc/spm/spm_clean
 }
 
 case $COMMAND in

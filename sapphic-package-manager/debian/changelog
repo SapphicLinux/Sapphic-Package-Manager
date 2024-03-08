@@ -1,3 +1,9 @@
+sapphic-package-manager (1.1) unstable; urgency=medium
+
+  * Fixed file paths 
+
+ -- Penelope Gwen <support@pogmom.me>  Thu, 07 Mar 2024 19:20:47 -0700
+
 sapphic-package-manager (1.0) unstable; urgency=medium
 
   * Initial release.
