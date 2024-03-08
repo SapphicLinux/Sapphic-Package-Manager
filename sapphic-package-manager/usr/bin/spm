@@ -1,12 +1,5 @@
 #!/bin/bash
 
-_completions()
-{
-  COMPREPLY+=("now")
-  COMPREPLY+=("tomorrow")
-  COMPREPLY+=("never")
-}
-
 COMMAND="${1}"
 VERSION=$(cat /lib/spm/version)
 

@@ -1,3 +1,9 @@
+sapphic-package-manager (1.2) unstable; urgency=medium
+
+  * Removed leftover code
+
+ -- Penelope Gwen <support@pogmom.me>  Fri, 08 Mar 2024 11:36:11 -0700
+
 sapphic-package-manager (1.1) unstable; urgency=medium
 
   * Fixed file paths 
