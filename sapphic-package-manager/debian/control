@@ -16,5 +16,6 @@ Depends:
  ${misc:Depends},
  apt,
  pipx,
- flatpak
+ flatpak,
+ sapphicmariomaker2
 Description: frontend for managing apt, flatpak, and pipx packages

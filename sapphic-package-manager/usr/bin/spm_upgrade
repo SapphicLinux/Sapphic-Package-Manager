@@ -44,6 +44,7 @@ while true; do
     if $isroot; then echo "a: Upgrade apt packages";fi
     echo "f: Update flatpak packages"
     echo "p: Update pipx packages"
+    echo "s: Update ssm2 packages"
     read -p "Install updates? " yn
   fi
   case $yn in
@@ -51,7 +52,8 @@ while true; do
     *[Yya]* ) if $isroot; then echo -e "\033[1mUpgrading apt packages...\033[0m";apt -y upgrade;fi;;&
     *[Yyf]* ) if $issudo; then echo -e "\033[1mUpdating flatpak packages...\033[0m";sudo -u $SUDO_USER flatpak update -y;else flatpak update -y;fi;;&
     *[Yyp]* ) if $issudo; then echo -e "\033[1mUpgrading pipx packages...\033[0m";sudo -u $SUDO_USER pipx upgrade-all;else pipx upgrade-all;fi;;&
-    *[Yyafp]* ) break;;
+    *[Yys]* ) if $issudo; then echo -e "\033[1mUpgrading ssm2 packages...\033[0m";sudo -u $SUDO_USER ssm -y;else ssm -yu;fi;;&
+    *[Yyafps]* ) break;;
     * ) yn=""; echo "Please select a valid option.";;
   esac
 done
