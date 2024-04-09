@@ -52,7 +52,7 @@ while true; do
     *[Yya]* ) if $isroot; then echo -e "\033[1mUpgrading apt packages...\033[0m";apt -y upgrade;fi;;&
     *[Yyf]* ) if $issudo; then echo -e "\033[1mUpdating flatpak packages...\033[0m";sudo -u $SUDO_USER flatpak update -y;else flatpak update -y;fi;;&
     *[Yyp]* ) if $issudo; then echo -e "\033[1mUpgrading pipx packages...\033[0m";sudo -u $SUDO_USER pipx upgrade-all;else pipx upgrade-all;fi;;&
-    *[Yys]* ) if $issudo; then echo -e "\033[1mUpgrading ssm2 packages...\033[0m";sudo -u $SUDO_USER ssm -y;else ssm -yu;fi;;&
+    *[Yys]* ) if $issudo; then echo -e "\033[1mUpgrading ssm2 packages...\033[0m";sudo -u $SUDO_USER smm2 -y;else smm2 -yu;fi;;&
     *[Yyafps]* ) break;;
     * ) yn=""; echo "Please select a valid option.";;
   esac
